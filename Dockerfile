@@ -7,7 +7,7 @@ FROM $BASEIMG
 ARG TIMEZONE=Etc/UTC
 RUN echo $TIMEZONE > /etc/timezone && ln -s /usr/share/zoneinfo/$TIMEZONE /etc/localtime
 
-RUN apt-get update && apt-get install -y git libmad0-dev libao-dev libtagc0-dev && rm -rf /var/lib/apt/lists/*
+RUN apt-get update && apt-get install -y pkg-config make gcc git libmad0-dev libao-dev libtagc0-dev && rm -rf /var/lib/apt/lists/*
 
 #If you have your own fork with changes, you'll want to change REPOLOCATION and REPOBRANCH.
 #REPODIR only needs to be changed if you renamed your fork or if you are cloning from a
