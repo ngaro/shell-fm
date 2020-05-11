@@ -19,3 +19,4 @@ WORKDIR /root
 RUN git clone $REPOLOCATION
 WORKDIR /root/$REPODIR
 RUN git checkout $REPOBRANCH
+RUN EXTERN_ONLY=1 make ; make ; make install
